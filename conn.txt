@@ -3,5 +3,3 @@ ssh -L 1521:dbvm02.iai.uni-bonn.de:1521 dogand0@login-stud.informatik.uni-bonn.d
 ssh -L 5432:dbvm05.iai.uni-bonn.de:5432 dogand0@login-stud.informatik.uni-bonn.de
 
 
-########POSTGRESLOGIN ###############Benutzername: imdbuser ##########Passwort: RDBss2021  ########
-#################################
