@@ -1,11 +1,12 @@
-package main.data.daoImpl;
+package main.data.daoImpl.Login;
 
 
 import main.data.dao.DBConnectionDAO;
 
-/*
-* Factory Pattern
-* */
+/**
+ * Database Factory Pattern
+ * hanldes alls DB´s
+ */
 public class DBConnectionHandler {
 
     private OracleDBConnectionDAOImpl oracleConnection;
@@ -22,6 +23,11 @@ public class DBConnectionHandler {
         return instance;
     }
 
+    /**
+     *
+     * @param databse
+     * @return ConnectionObj
+     */
     public DBConnectionDAO getConnection(String databse){
         switch(databse){
             case "postgres":

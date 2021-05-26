@@ -1,19 +1,18 @@
-package main.data.daoImpl;
+package main.data.daoImpl.Login;
 
-import main.bdo.PgUser;
+import main.Config.DBConfig;
+import main.bdo.User.PgUser;
 import main.data.dao.DBConnectionDAO;
-import oracle.jdbc.driver.OracleDriver;
 
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class PgDBConnectionDAOImpl implements DBConnectionDAO {
+public class PgDBConnectionDAOImpl implements DBConnectionDAO  {
 
     private static PgDBConnectionDAOImpl instance;
     private Connection connection;
-    private String url = DBConfig.pgDatabaseURL;
+    private String url;
 
     // Constructor
     private PgDBConnectionDAOImpl(){}
@@ -26,21 +25,32 @@ public class PgDBConnectionDAOImpl implements DBConnectionDAO {
         return instance;
     }
 
-    @Override
-    public Connection openConnection() {
-        PgUser user= PgUser.getInstance();
+    public void setUrl(String url){
+        this.url = url;
+    }
 
-        try{
-            connection = DriverManager.getConnection(url, user.getUsername(), user.getPassword());
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
+    @Override
+    public Connection openConnection() throws SQLException{
+        PgUser user= PgUser.getInstance();
+        connection = DriverManager.getConnection(url, user.getUsername(), user.getPassword());
         return connection;
     }
 
     @Override
     public Connection getConnection() {
         return connection;
+    }
+
+    @Override
+    public void setConnectionString(String connectiontype) {
+        switch (connectiontype){
+            case "SSH":
+                setUrl(DBConfig.pg_Database_SSH_URL);
+                break;
+            case "VPN":
+                setUrl(DBConfig.pg_Database_VPN_URL);
+                break;
+        }
     }
 
     @Override
@@ -51,4 +61,5 @@ public class PgDBConnectionDAOImpl implements DBConnectionDAO {
             e.printStackTrace();
         }
     }
+
 }

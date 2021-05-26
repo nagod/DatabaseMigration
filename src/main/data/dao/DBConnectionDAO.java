@@ -6,5 +6,6 @@ import java.sql.SQLException;
 public interface DBConnectionDAO {
     Connection openConnection() throws SQLException;
     Connection getConnection();
+    void setConnectionString(String connectiontype);
     void closeConnection();
 }

@@ -1,22 +1,30 @@
-package main.presentation.controller;
+package main.presentation.controller.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import main.application.App;
 import main.application.service.LoginService;
-import main.bdo.OracleUser;
+import main.bdo.User.OracleUser;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OracleLogin implements Initializable{
 
+
+
     @FXML
     private TextField oracleUsernameTextfield;
 
     @FXML
-    private TextField oraclePasswordTextfield;
+    private PasswordField oraclePasswordField;
+
+    @FXML
+    private ChoiceBox connection_chooser;
+
 
     OracleUser oracleUser;
     LoginService loginService;
@@ -26,13 +34,20 @@ public class OracleLogin implements Initializable{
         loginService = LoginService.getInstance();
         oracleUser = OracleUser.getInstance();
     }
+
     @FXML
     void login(ActionEvent event) {
+        String connectionString = connection_chooser.getValue().toString();
         if(isValid()){
-            oracleUser.setData(oracleUsernameTextfield.getText(), oraclePasswordTextfield.getText());
-            if(loginService.login(oracleUser,"oracle")){
+            oracleUser.setData(oracleUsernameTextfield.getText(), oraclePasswordField.getText());
+            if(loginService.login("oracle", connectionString)){
                 System.out.println("Login at Oracle was successful");
                 App.getInstance().loadWindow("/fxml/PgLogin.fxml", "PG Login");
+                //App.getInstance().loadWindow("/fxml/tmp.fxml", "HI");
+
+            }else{
+                oracleUsernameTextfield.setStyle("-fx-border-color: red;");
+                oraclePasswordField.setStyle("-fx-border-color: red;");
             }
         }
 
@@ -43,9 +58,6 @@ public class OracleLogin implements Initializable{
     }
 
     boolean isValid(){
-        if(oraclePasswordTextfield.getText().isEmpty() || oraclePasswordTextfield.getText().isEmpty()){
-            return false;
-        }
-        return true;
+        return !oracleUsernameTextfield.getText().isEmpty() && !oraclePasswordField.getText().isEmpty() && !connection_chooser.getValue().toString().equals("select connection");
     }
 }
