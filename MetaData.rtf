@@ -1,0 +1,340 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16000\viewh19300\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs30 \cf0 TYPES \{\
+\
+		int4 INTEGER\
+		_varchar ARRAY\
+		bool BIT\
+		varchar VARCHAR\
+		_int4 ARRAY\
+		numeric NUMERIC\
+\}\
+\
+\
+\
+------------------crew------------------\
+----------------COLUMN 1---------------- \
+Column\{	\
+		columnName='titleid', 	\
+		columnTypeName='int4', 	\
+		columnSize='10', 	\
+		nullable=false, 	\
+		DATA_TYPE='INTEGER'\
+		\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='directors', 	columnTypeName='_int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='writers', 	columnTypeName='_int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+\
+\
+------------------episode------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='titleid', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='parentid', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='seasonnr', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 4---------------- \
+Column\{	columnName='episodenr', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+\
+\
+------------------name------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='id', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='primaryname', 	columnTypeName='varchar', 	columnSize='255', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='birthyear', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 4---------------- \
+Column\{	columnName='deathyear', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 5---------------- \
+Column\{	columnName='knownfortitles', 	columnTypeName='_int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+----------------COLUMN 6---------------- \
+Column\{	columnName='primaryprofession', 	columnTypeName='_varchar', 	columnSize='2147483647', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+\
+\
+------------------principals------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='titleid', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='ordering', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='nameid', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 4---------------- \
+Column\{	columnName='category', 	columnTypeName='varchar', 	columnSize='255', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 5---------------- \
+Column\{	columnName='job', 	columnTypeName='varchar', 	columnSize='512', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 6---------------- \
+Column\{	columnName='characters', 	columnTypeName='_varchar', 	columnSize='2147483647', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+\
+\
+------------------ratings------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='titleid', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='avgrating', 	columnTypeName='numeric', 	columnSize='131089', 	nullable=true, 	DATA_TYPE='NUMERIC'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='numvotes', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+\
+\
+------------------title------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='id', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='titletype', 	columnTypeName='varchar', 	columnSize='255', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='primarytitle', 	columnTypeName='varchar', 	columnSize='512', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 4---------------- \
+Column\{	columnName='originaltitle', 	columnTypeName='varchar', 	columnSize='512', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 5---------------- \
+Column\{	columnName='startyear', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 6---------------- \
+Column\{	columnName='endyear', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 7---------------- \
+Column\{	columnName='runtimeminutes', 	columnTypeName='int4', 	columnSize='10', 	nullable=true, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 8---------------- \
+Column\{	columnName='genres', 	columnTypeName='_varchar', 	columnSize='2147483647', 	nullable=true, 	DATA_TYPE='ARRAY'\}\
+\
+\
+\
+\
+------------------titleakas------------------\
+----------------COLUMN 1---------------- \
+Column\{	columnName='titleid', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 2---------------- \
+Column\{	columnName='ordering', 	columnTypeName='int4', 	columnSize='10', 	nullable=false, 	DATA_TYPE='INTEGER'\}\
+\
+\
+----------------COLUMN 3---------------- \
+Column\{	columnName='title', 	columnTypeName='varchar', 	columnSize='1024', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 4---------------- \
+Column\{	columnName='region', 	columnTypeName='varchar', 	columnSize='6', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 5---------------- \
+Column\{	columnName='language', 	columnTypeName='varchar', 	columnSize='6', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 6---------------- \
+Column\{	columnName='types', 	columnTypeName='varchar', 	columnSize='64', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 7---------------- \
+Column\{	columnName='attributes', 	columnTypeName='varchar', 	columnSize='255', 	nullable=true, 	DATA_TYPE='VARCHAR'\}\
+\
+\
+----------------COLUMN 8---------------- \
+Column\{	columnName='isoriginaltitle', 	columnTypeName='bool', 	columnSize='1', 	nullable=true, 	DATA_TYPE='BIT'\}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='crew',\
+			columnName='titleid',  \
+			primarykeyName='crew_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='episode', 	\
+			columnName='titled',  \
+			primarykeyName='episode_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='name', 	\
+			columnName='id',\
+			primarykeyName='name_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='principals', 	\
+			columnName='titleid',  \
+			primarykeyName='principals_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='principals', 	\
+			columnName='nameid',  \
+			primarykeyName='principals_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='principals', 	\
+			columnName='ordering',  \
+			primarykeyName='principals_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='ratings', 	\
+			columnName='titleid',  \
+			primarykeyName='ratings_key'\
+\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='title', 	\
+			columnName='id', \
+ 			primarykeyName='title_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{	\
+			tableName='titleakas', 	\
+			columnName='titleid', \
+			primarykeyName='akas_key'\
+			\}\
+\
+----------------PrimaryKey--------------- \
+PrimaryKey\{\
+			tableName='titleakas', 	\
+			columnName='ordering',   \
+			primarykeyName='akas_key'\
+			\}\
+\
+\
+\
+ForeignKey\{	\
+			primarykeyTabelName='name',	\
+			primaykeyColumnName='id', 	primarykeyName='name_key', 			foreignkeyName='fk_principals_name', 			foreignTablename='principals', 	\
+			foreignColumnName='nameid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', 	\
+			primarykeyName='title_key', \
+			foreignkeyName='fk_crew_title', 	\
+			foreignTablename='crew', 	\
+			foreignColumnName='titleid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{	\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', 	\
+			primarykeyName='title_key', 	\
+			foreignkeyName='fk_episode', 	\
+			foreignTablename='episode', 	\
+			foreignColumnName='titleid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{	\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', 	\
+			primarykeyName='title_key', \
+			foreignkeyName='fk_episode_parent', 			foreignTablename='episode', 	\
+			foreignColumnName='parentid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', 	\
+			primarykeyName='title_key', 	\
+			foreignkeyName='fk_principals_title', 	\
+			foreignTablename='principals', 	\
+			foreignColumnName='titleid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{	\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', 	\
+			primarykeyName='title_key', 	\
+			foreignkeyName='fk_ratings', 	\
+			foreignTablename='ratings', 	\
+			foreignColumnName='titleid'\
+			\}\
+\
+----------------ForeignKey--------------- \
+ForeignKey\{	\
+			primarykeyTabelName='title',	\
+			primaykeyColumnName='id', \
+			primarykeyName='title_key', 	\
+			foreignkeyName='fk_titleakas', 	\
+			foreignTablename='titleakas', 	\
+			foreignColumnName='titleid'\
+			\}\
+}

@@ -1,0 +1,10 @@
+IMPORT ____ 
+
+
+http://www.sqlines.com/postgresql-to-oracle
+
+https://www.tutorialspoint.com/plsql/plsql_arrays.htm
+
+https://www.cybertec-postgresql.com/en/mapping-oracle-datatypes-to-postgresql/
+
+https://www.oracletutorial.com/oracle-basics/oracle-identity-column/
